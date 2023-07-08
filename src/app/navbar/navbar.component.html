@@ -1,0 +1,43 @@
+<div
+  class="sticky top-0 left-0 right-0 text-white flex flex-col justify-start items-start bg-slate-800 transition-all"
+  [ngClass]="showMenu ? 'h-[230px] md_link:h-[85px]' : 'h-[85px]'"
+>
+  <div class="h-[85px] w-full p-4 flex justify-between items-center">
+    <p class="text-xl xs:text-2xl">MyPortfolio</p>
+
+    <div class="hidden md_link:flex justify-start items-center gap-4">
+      <a routerLink="/home" routerLinkActive="text-white" class="text-gray-300"
+        >Home</a
+      >
+      <a
+        routerLink="/signin"
+        routerLinkActive="text-white"
+        class="text-gray-300"
+        >Signin</a
+      >
+      <a
+        routerLink="/signup"
+        routerLinkActive="text-white"
+        class="text-gray-300"
+        >Signup</a
+      >
+    </div>
+
+    <mat-icon *ngIf="showIcons" class="block md_link:hidden" (click)="toggleMenu()">{{!showMenu ? 'menu' : 'close'}}</mat-icon>
+  </div>
+
+  <div
+    *ngIf="showMenu"
+    class="h-[150px] w-full p-4 flex md_link:hidden flex-col justify-start items-start gap-4 border-t border-slate-300"
+  >
+    <a routerLink="/home" routerLinkActive="text-white" class="text-gray-300"
+      >Home</a
+    >
+    <a routerLink="/signin" routerLinkActive="text-white" class="text-gray-300"
+      >Signin</a
+    >
+    <a routerLink="/signup" routerLinkActive="text-white" class="text-gray-300"
+      >Signup</a
+    >
+  </div>
+</div>
